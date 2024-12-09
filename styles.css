@@ -22,7 +22,7 @@
 
 body {
   background: var(--neutral-100);
-  padding: 48px;
+  padding: clamp(24px, 3.333vw, 3.333vw)
 }
 
 
@@ -30,16 +30,16 @@ body {
 
 h1 {
   font-weight: 300;
-  font-size: 75px;
-  line-height: 80px;
+  font-size: clamp(48px, 5vw, 5vw);
+  line-height: 104%;
   letter-spacing: -0.024em;
   hanging-punctuation: first last;
 }
 
 h4 {
   font-weight: 500;
-  font-size: 19px;
-  line-height: 24px;
+  font-size: clamp(15px, 13vw, 19px);
+  line-height: 100%;
   letter-spacing: -0.024em;
   text-transform: uppercase;
   color: var(--neutral-200);
@@ -50,8 +50,8 @@ h4 {
   font-family: 'Sometype Mono';
   font-style: normal;
   font-weight: 400;
-  font-size: 19px;
-  line-height: 24px;
+  font-size: clamp(15px, 13vw, 19px);
+  line-height: 100%;
   text-align: right;
   letter-spacing: -0.024em;
   text-decoration: underline;
@@ -60,7 +60,7 @@ h4 {
 }
 
 .project-title {
-  font-size: 12.2vw;
+  font-size: clamp(80px, 12.2vw, 176px);
   line-height: 100%;
   letter-spacing: -0.024em;
   text-transform: uppercase;
@@ -80,25 +80,31 @@ h4 {
   flex-direction: column;
 }
 
-.columns-4 {
+.nav {
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.footer {
+  grid-template-columns: 2fr 1fr 1fr;
+  align-items: center;
 }
 
 
-.spacer-144 {
-  height: 144px;
+.spacer-xl {
+  height: clamp(64px, 10vw, 144px);
 }
 
-.spacer-96 {
-  height: 96px;
+.spacer-l {
+  height: clamp(48px, 6.666vw, 96px);
 }
 
-.spacer-64 {
-  height: 64px;
+.spacer-m {
+  height: clamp(32px, 4.444vw, 64px);
 }
 
-.spacer-48 {
-  height: 48px;
+.spacer-s {
+  height: clamp(24px, 3.333vw, 48px);
 }
 
 .gap-24 {
@@ -126,4 +132,13 @@ h4 {
   height: fit-content;
   margin: 8px 0 0 12px;
   text-decoration: none;
+}
+
+
+@media only screen and (max-width: 720px) {
+
+  .footer {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
 }
